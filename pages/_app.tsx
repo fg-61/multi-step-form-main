@@ -27,10 +27,16 @@ export default function App({ Component, pageProps }: AppProps) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
+          colorScheme: "light",
+          fontSizes: {
+            xs: 10,
+            sm: 12,
+            md: 14,
+            lg: 16,
+            xl: 20,
+          },
           fontFamily: ubuntu.style.fontFamily,
-          fontWeight: ubuntu.style.fontWeight,
-          colorScheme: "light"
-        } as any}
+        }}
       >
         <main>
           <Component {...pageProps} />
