@@ -1,14 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
-import { Ubuntu } from "@next/font/google"
-
-const ubuntu = Ubuntu({
-  weight: ['400', '500', '700'],
-  style: 'normal',
-  subsets: ['latin'],
-})
-
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -32,10 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
             xs: 10,
             sm: 12,
             md: 14,
-            lg: 16,
-            xl: 20,
+            xl: 16,
           },
-          fontFamily: ubuntu.style.fontFamily,
+          fontFamily: 'Ubuntu !important',
+          headings: {
+            fontFamily: 'Ubuntu !important',
+          }
         }}
       >
         <main>
