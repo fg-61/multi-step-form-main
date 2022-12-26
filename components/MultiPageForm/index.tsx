@@ -6,11 +6,29 @@ import Information from './Information'
 import Header from './Header'
 import Body from './Body'
 import Footer from './Footer'
-
+import { FormProps } from '../types'
 const MultiPageForm = () => {
     const [step, setStep] = useState(0)
     const stepLength = 5
     const infoStep = stepLength - 1
+
+    const [formValues, setFormValues] = useState<FormProps>(
+        {
+            info: {
+                name: "",
+                email: "",
+                phoneNumber: undefined
+            },
+            plan: {
+                type: ""
+            },
+            addOns: {
+                name: "",
+                detail: "",
+                price: undefined
+            }
+        }
+    )
 
     return (
         <Group spacing={0} position="apart" w={940} h={600} bg="hsl(0, 0%, 100%)" style={{ borderRadius: 14 }}>
@@ -20,7 +38,7 @@ const MultiPageForm = () => {
                     ? <Information />
                     : <>
                         <Header title={FORM_TITLES[step].title} description={FORM_TITLES[step].subTitle} />
-                        <Body step={step} />
+                        <Body step={step} infoValues={formValues.info} setValues={setFormValues} />
                         <Footer step={step} setStep={setStep} stepLength={stepLength} />
                     </>}
             </Box>

@@ -23,7 +23,6 @@ const Sidebar = ({ step }: SidebarProps) => {
                     )
                 })}
             </Stack>
-
         </Box >
     )
 }

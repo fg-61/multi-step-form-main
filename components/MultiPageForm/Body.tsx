@@ -1,16 +1,30 @@
 import { Box } from '@mantine/core'
+import { Dispatch, SetStateAction } from 'react';
+import { FormProps } from '../types';
+import AddOns from './Steps/AddOns';
+import SelectPlan from './Steps/SelectPlan';
+import Summary from './Steps/Summary';
+import YourInfo from './Steps/YourInfo';
 
-type BodyProps = { step: number }
+type BodyProps = {
+    step: number,
+    infoValues: {
+        name: string;
+        email: string;
+        phoneNumber: number | undefined;
+    }
+    setValues: Dispatch<SetStateAction<FormProps>>
+}
 
-const Body = ({ step }: BodyProps) => {
+const Body = ({ step, infoValues, setValues }: BodyProps) => {
     const isFirstStep = step === 0;
     const isSecondStep = step === 1;
     const isThirdStep = step === 2;
     const isLastStep = step === 3;
 
     return (
-        <Box h={374}>
-            {isFirstStep && <YourInfo />}
+        <Box h={393} pt={34}>
+            {isFirstStep && <YourInfo values={infoValues} setValues={setValues} />}
             {isSecondStep && <SelectPlan />}
             {isThirdStep && <AddOns />}
             {isLastStep && <Summary />}
@@ -19,27 +33,3 @@ const Body = ({ step }: BodyProps) => {
 }
 
 export default Body
-
-const YourInfo = () => {
-    return (
-        <h1>Info Body</h1>
-    )
-}
-
-const SelectPlan = () => {
-    return (
-        <h1>Select body</h1>
-    )
-}
-
-const AddOns = () => {
-    return (
-        <h1>Add Ons body</h1>
-    )
-}
-
-const Summary = () => {
-    return (
-        <h1>Finish body</h1>
-    )
-}

@@ -19,23 +19,23 @@ export const FORM_TITLES = [
 
 export const STEPS = [
   {
-      stepNo: 1,
-      title: "STEP 1",
-      subTitle: "YOUR INFO"
+    stepNo: 1,
+    title: "STEP 1",
+    subTitle: "YOUR INFO",
   },
   {
-      stepNo: 2,
-      title: "STEP 2",
-      subTitle: "SELECT PLAN"
+    stepNo: 2,
+    title: "STEP 2",
+    subTitle: "SELECT PLAN",
   },
   {
-      stepNo: 3,
-      title: "STEP 3",
-      subTitle: "ADD-ONS"
+    stepNo: 3,
+    title: "STEP 3",
+    subTitle: "ADD-ONS",
   },
   {
-      stepNo: 4,
-      title: "STEP 4",
-      subTitle: "SUMMARY"
-  }
-]
+    stepNo: 4,
+    title: "STEP 4",
+    subTitle: "SUMMARY",
+  },
+];
