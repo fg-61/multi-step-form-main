@@ -8,7 +8,7 @@ const Information = () => {
         <Center>
           <Box w={80} h={80} ml={2} style={{ backgroundImage: `url(${IconComplete.src})`, }} />
         </Center>
-        <Title align="center" size={32} weight={700} mt={20} mb={2}>Thank you!</Title>
+        <Title align="center" size={32} weight={700} mt={20} mb={2} c="hsl(213, 96%, 18%)">Thank you!</Title>
         <Text align="center" size={16} weight={400} c="hsl(231, 11%, 63%)">
           Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com
         </Text>
