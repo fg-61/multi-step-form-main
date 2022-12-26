@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box, Group } from '@mantine/core'
 import { FORM_TITLES } from '../constants'
-import SideBar from './SideBar'
+import Sidebar from './Sidebar'
 import Information from './Information'
 import Header from './Header'
 import Body from './Body'
@@ -12,10 +12,9 @@ const MultiPageForm = () => {
     const stepLength = 5
     const infoStep = stepLength - 1
 
-
     return (
         <Group spacing={0} position="apart" w={940} h={600} bg="hsl(0, 0%, 100%)" style={{ borderRadius: 14 }}>
-            <SideBar />
+            <Sidebar step={step} />
             <Box px={85} pt={52} w={636} h="100%">
                 {step === infoStep
                     ? <Information />

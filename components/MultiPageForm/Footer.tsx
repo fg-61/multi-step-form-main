@@ -39,7 +39,7 @@ const Footer = ({ step, setStep, stepLength }: FooterProps) => {
                 style={{ fontSize: 16, fontWeight: 500 }}
                 sx={{ '&:hover': { backgroundColor: step < lastStep ? "hsl(213, 96%, 27%)" : "hsl(243, 100%, 71%)" } }}
             >
-                {step < lastStep ? "Next" : "Confirm"}
+                {step < lastStep ? "Next Step" : "Confirm"}
             </Button>
         </Flex>
     )
