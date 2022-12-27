@@ -1,4 +1,4 @@
-import { Box, Button, NumberInput, Stack, TextInput } from "@mantine/core"
+import { Box, NumberInput, Stack, TextInput } from "@mantine/core"
 import { useForm } from "@mantine/form";
 import { Dispatch, SetStateAction } from "react";
 import { FormProps } from "../../types";
@@ -22,10 +22,10 @@ const YourInfo = ({ values, setValues }: YourInfoProps) => {
         },
     });
 
-    const submit = () => {
-        setValues(prev => ({ ...prev, info: { name: form.values.name, email: form.values.email, phoneNumber: form.values.phoneNumber } }))
-        form.validate()
-    }
+    // const submit = () => {
+    //     setValues(prev => ({ ...prev, info: { name: form.values.name, email: form.values.email, phoneNumber: form.values.phoneNumber } }))
+    //     form.validate()
+    // }
 
     return (
         <Box pr={16}>
@@ -84,7 +84,6 @@ const YourInfo = ({ values, setValues }: YourInfoProps) => {
                         {...form.getInputProps('phoneNumber')}
                     />
                 </Stack>
-                <Button onClick={submit}>Tıkla</Button>
             </form>
         </Box>
     );
