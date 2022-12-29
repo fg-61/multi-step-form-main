@@ -3,6 +3,7 @@ import { Group } from "@mantine/core"
 import { AddOnCard } from "../../Core/AddOnCard"
 import { ADD_ONS } from "../../constants"
 
+const isYearly = true // TODO: burası selectplan'dan gelecek
 
 const AddOns = () => {
   const [checkedState, setCheckedState] = useState(
@@ -24,7 +25,9 @@ const AddOns = () => {
           onChange={() => handleOnChange(id - 1)}
           checked={checkedState[id - 1]}
           title={title}
-          description={description} price={price}
+          description={description}
+          price={price}
+          isYearly={isYearly}
         />
       )}
     </Group>

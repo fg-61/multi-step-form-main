@@ -23,6 +23,7 @@ interface AddOnCardProps {
     title: string
     description: string
     price: number
+    isYearly: boolean
 }
 
 export const AddOnCard = ({
@@ -31,6 +32,7 @@ export const AddOnCard = ({
     title,
     description,
     price,
+    isYearly,
     className,
     ...others
 }: AddOnCardProps & Omit<React.ComponentPropsWithoutRef<'button'>, keyof AddOnCardProps>) => {
@@ -65,7 +67,7 @@ export const AddOnCard = ({
                     <Text size={16} fw={500} lh="17px" c="hsl(213, 96%, 18%)">{title}</Text>
                     <Text size={15} color="dimmed" pt={2} c="hsl(231, 11%, 63%)">{description}</Text>
                 </Box>
-                <Text pr={5} c="hsl(243, 100%, 62%)">{price < 0 ? "-" : "+"}${price}/mo</Text>
+                <Text pr={5} c="hsl(243, 100%, 62%)">+${price}/{isYearly ? "yr" : "mo"}</Text>
             </Group>
         </UnstyledButton>
     );
