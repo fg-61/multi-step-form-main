@@ -39,3 +39,48 @@ export const STEPS = [
     subTitle: "SUMMARY",
   },
 ];
+
+export const PLANS = [
+  {
+    id: 1,
+    icon: "/images/icon-arcade.svg",
+    title: "Arcade",
+    montlyFee: 9,
+    freeMonths: 2,
+  },
+  {
+    id: 2,
+    icon: "/images/icon-advanced.svg",
+    title: "Advanced",
+    montlyFee: 12,
+    freeMonths: 2,
+  },
+  {
+    id: 3,
+    icon: "/images/icon-pro.svg",
+    title: "Pro",
+    montlyFee: 15,
+    freeMonths: 2,
+  },
+];
+
+export const ADD_ONS = [
+  {
+    id: 1,
+    title: "Online service",
+    description: "Access to multiplayer games",
+    price: 1,
+  },
+  {
+    id: 2,
+    title: "Larger storage",
+    description: "Extra 1TB of cloud save",
+    price: 2,
+  },
+  {
+    id: 3,
+    title: "Customizable Profile",
+    description: "Custom theme on your profile",
+    price: 1,
+  },
+];

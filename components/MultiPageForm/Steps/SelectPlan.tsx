@@ -1,30 +1,34 @@
-import { Button, Group } from "@mantine/core"
+import { useState } from 'react'
+import { Grid } from "@mantine/core"
+import PlanCard from '../../Core/PlanCard';
+import SwitchCard from '../../Core/SwitchCard';
+import { PLANS } from '../../constants';
+
+type SelectedPlan = "Arcade" | "Advanced" | "Pro"
 
 const SelectPlan = () => {
+  const [selectedPlan, setSelectedPlan] = useState<SelectedPlan>("Arcade");
+  const [isYearly, setIsYearly] = useState(false)
 
   return (
-    <>
-      <Group spacing={16} pt={3} w={450}>
-        <Button
-          w={138} h={160} bg="transparent"
-          style={{ border: "1px solid hsl(229, 24%, 87%)", borderRadius: 8 }}
-          sx={{ ':focus': { backgroundColor: "hsl(217, 100%, 97%)", borderColor: "hsl(243, 100%, 62%)" }, ':hover': { backgroundColor: "transparent", borderColor: "hsl(243, 100%, 62%) !important" } }}
-        >
-        </Button>
-        <Button
-          w={138} h={160} bg="transparent"
-          style={{ border: "1px solid hsl(229, 24%, 87%)", borderRadius: 8 }}
-          sx={{ ':focus': { backgroundColor: "hsl(217, 100%, 97%)", borderColor: "hsl(243, 100%, 62%)" }, ':hover': { backgroundColor: "transparent", borderColor: "hsl(243, 100%, 62%) !important" } }}
-        >
-        </Button>
-        <Button
-          w={138} h={160} bg="transparent"
-          style={{ border: "1px solid hsl(229, 24%, 87%)", borderRadius: 8 }}
-          sx={{ ':focus': { backgroundColor: "hsl(217, 100%, 97%)", borderColor: "hsl(243, 100%, 62%)" }, ':hover': { backgroundColor: "transparent", borderColor: "hsl(243, 100%, 62%) !important" } }}
-        >
-        </Button>
-      </Group>
-    </>
+    <Grid gutter={18} pt={3}>
+      {PLANS.map(({ id, icon, title, montlyFee, freeMonths }) =>
+        <Grid.Col key={id} span={4}>
+          <PlanCard
+            checked={title === selectedPlan}
+            onChange={() => setSelectedPlan(title as SelectedPlan)}
+            icon={icon}
+            title={title}
+            montlyFee={montlyFee}
+            freeMonths={freeMonths}
+            isYearly={isYearly}
+          />
+        </Grid.Col>
+      )}
+      <Grid.Col span={12}>
+        <SwitchCard setIsYearly={setIsYearly} isYearly={isYearly} />
+      </Grid.Col>
+    </Grid >
   )
 }
 

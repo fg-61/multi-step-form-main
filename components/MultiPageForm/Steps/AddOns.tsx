@@ -1,38 +1,32 @@
 import { useState } from "react"
 import { Group } from "@mantine/core"
-import { CheckboxCard } from "../CheckboxCard"
+import { AddOnCard } from "../../Core/AddOnCard"
+import { ADD_ONS } from "../../constants"
 
-type Plan = { arcade: boolean, advanced: boolean, pro: boolean }
 
 const AddOns = () => {
-  const [plan, setPlan] = useState<Plan>({ arcade: false, advanced: false, pro: false })
+  const [checkedState, setCheckedState] = useState(
+    new Array(ADD_ONS.length).fill(false)
+  );
+
+  const handleOnChange = (position: number) => {
+    const updatedCheckedState = checkedState.map((item: boolean, index: number) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
+  };
 
   return (
     <Group spacing={16} pt={3} w={450}>
-      <CheckboxCard
-        key={1}
-        checked={plan.arcade}
-        onChange={(value) => setPlan(prev => ({ ...prev, arcade: value }))}
-        title="Online service"
-        description="Access to multiplayer games"
-        price={1}
-      />
-      <CheckboxCard
-        key={2}
-        checked={plan.advanced}
-        onChange={(value) => setPlan(prev => ({ ...prev, advanced: value }))}
-        title="Larger storage"
-        description="Extra 1TB of cloud save"
-        price={2}
-      />
-      <CheckboxCard
-        key={3}
-        checked={plan.pro}
-        onChange={(value) => setPlan(prev => ({ ...prev, pro: value }))}
-        title="Customizable Profile"
-        description="Custom theme on your profile"
-        price={2}
-      />
+      {ADD_ONS.map(({ id, title, description, price }) =>
+        <AddOnCard
+          key={id}
+          onChange={() => handleOnChange(id - 1)}
+          checked={checkedState[id - 1]}
+          title={title}
+          description={description} price={price}
+        />
+      )}
     </Group>
   )
 }

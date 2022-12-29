@@ -12,12 +12,11 @@ const useStyles = createStyles(() => ({
         padding: 20,
         '&:hover': {
             borderColor: "hsl(243, 100%, 62%) !important"
-
         }
     }
 }));
 
-interface CheckboxCardProps {
+interface AddOnCardProps {
     checked?: boolean;
     defaultChecked?: boolean;
     onChange?(checked: boolean): void;
@@ -26,22 +25,19 @@ interface CheckboxCardProps {
     price: number
 }
 
-export const CheckboxCard = ({
+export const AddOnCard = ({
     checked,
-    defaultChecked,
     onChange,
     title,
     description,
     price,
     className,
     ...others
-}: CheckboxCardProps & Omit<React.ComponentPropsWithoutRef<'button'>, keyof CheckboxCardProps>) => {
+}: AddOnCardProps & Omit<React.ComponentPropsWithoutRef<'button'>, keyof AddOnCardProps>) => {
     const { classes, cx } = useStyles();
 
     const [value, handleChange] = useUncontrolled({
         value: checked,
-        defaultValue: defaultChecked,
-        finalValue: false,
         onChange,
     });
     return (

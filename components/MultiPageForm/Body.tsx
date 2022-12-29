@@ -23,7 +23,7 @@ const Body = ({ step, infoValues, setValues }: BodyProps) => {
     const isLastStep = step === 3;
 
     return (
-        <Box h={393} pt={34}>
+        <Box h={393} pt={34} pr={16}>
             {isFirstStep && <YourInfo values={infoValues} setValues={setValues} />}
             {isSecondStep && <SelectPlan />}
             {isThirdStep && <AddOns />}

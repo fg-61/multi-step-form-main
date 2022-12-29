@@ -1,12 +1,12 @@
 import { Box, Center, Group, Stack, Text } from '@mantine/core'
-import Image from 'assets/images/bg-sidebar-desktop.svg'
+import SidebarBackgroundImage from '../../public/images/bg-sidebar-desktop.svg'
 import { STEPS } from '../constants'
 
 type SidebarProps = { step: number }
 
 const Sidebar = ({ step }: SidebarProps) => {
     return (
-        <Box w={274} h={568} m={15} pt={35} pl={32} style={{ backgroundImage: `url(${Image.src})`, }}>
+        <Box w={274} h={568} m={15} pt={35} pl={32} style={{ backgroundImage: `url(${SidebarBackgroundImage.src})`, }}>
             <Stack spacing={22}>
                 {STEPS.map(({ stepNo, title, subTitle }, key) => {
                     const isSelected = (step + 1) === stepNo
