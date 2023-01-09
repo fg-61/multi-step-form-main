@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Grid } from "@mantine/core"
-import PlanCard from '../../Core/PlanCard';
-import SwitchCard from '../../Core/SwitchCard';
-import { PLANS } from '../../constants';
+import PlanCard from './PlanCard';
+import SwitchCard from './SwitchCard';
+import { PLANS } from '../../../constants';
 
 type SelectedPlan = "Arcade" | "Advanced" | "Pro"
 

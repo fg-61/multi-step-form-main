@@ -1,6 +1,6 @@
 import { Box, Group, Stack, Text, UnstyledButton } from "@mantine/core"
 import { ADD_ONS, PLANS } from "../../constants"
-import SelectPlan from "../../MultiPageForm/Steps/SelectPlan"
+import SelectPlan from "./SelectPlan"
 
 const selectedPlan = { ...PLANS[0], isYearly: false }
 const selectedAddOns = [ADD_ONS[0], ADD_ONS[1]]

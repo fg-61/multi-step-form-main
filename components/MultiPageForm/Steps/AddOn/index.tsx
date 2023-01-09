@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Group } from "@mantine/core"
-import { AddOnCard } from "../../Core/AddOnCard"
-import { ADD_ONS } from "../../constants"
+import { AddOnCard } from "./AddOnCard"
+import { ADD_ONS } from "../../../constants"
 
 const isYearly = true // TODO: burası selectplan'dan gelecek
 

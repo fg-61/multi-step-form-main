@@ -1,7 +1,7 @@
 import { Box } from '@mantine/core'
 import { Dispatch, SetStateAction } from 'react';
 import { FormProps } from '../types';
-import AddOns from './Steps/AddOns';
+import AddOns from './Steps/AddOn';
 import SelectPlan from './Steps/SelectPlan';
 import Summary from './Steps/Summary';
 import YourInfo from './Steps/YourInfo';
